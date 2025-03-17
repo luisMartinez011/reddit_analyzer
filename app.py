@@ -15,7 +15,7 @@ def get_available_models() -> List[str]:
     """Fetch available models from Ollama."""
     try:
         models = ollama.list()
-        return [model["name"] for model in models["models"]]
+        return [model["model"] for model in models["models"]]
     except Exception as e:
         st.error(f"Error fetching Ollama models: {str(e)}")
         return []
